@@ -29,7 +29,7 @@ local function RunBot()
             print("Server Hopping!")
             raisedTemp = 0
             if identifyexecutor() == "Fluxus" then
-                --[[Needed for fluxus atm]]queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/crownaintanoob/CFA-Hub-UI-lib/main/tergie.lua"))()')
+                --[[Needed for fluxus atm]]queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/crownaintanoob/yesindeed23/main/noindeed.lua"))()')
             end
             loadstring(game:HttpGet("https://raw.githubusercontent.com/crownaintanoob/CFA-Hub-UI-lib/main/serverhp.lua"))()
         end
