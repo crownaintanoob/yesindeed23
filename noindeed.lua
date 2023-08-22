@@ -4,7 +4,7 @@ local function RunBot()
     local HttpRequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
     local HttpService = game:GetService("HttpService")
     -- Rejoin when kicked for whatever reason
-    game:GetService("CoreGui"):WaitForChild("RobloxPromptGui"):WaitForChild("promptOverlay").ChildAdded:Connect(function(child)
+    game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(function(child)
         if child.Name == 'ErrorPrompt' and child:FindFirstChild('MessageArea') and child.MessageArea:FindFirstChild("ErrorFrame") then
             game:GetService("TeleportService"):Teleport(game.PlaceId)
         end
@@ -22,9 +22,9 @@ local function RunBot()
         local localP = Players.LocalPlayer
         repeat task.wait(.1) until localP and localP.Character and localP.Character:IsDescendantOf(workspace)
         task.wait(2)
-        -- Accept Last Outfit Prompt
+        -- Accept Last Outfit Prompt and hide the UI
         localP:WaitForChild("PlayerGui"):WaitForChild("PromptWearLastOutfit"):WaitForChild("PromptResult"):FireServer(true)
-        
+        localP:WaitForChild("PlayerGui"):WaitForChild("PromptWearLastOutfit").Enabled = false
         local raisedTemp = 0
         local JoinTime = tick()
         local function ServerHopDo()
